@@ -1,26 +1,138 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>crave-crusher-web</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CraveCrusher - Quit Smoking Today</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Crave<span>Crusher</span></h1>
+    </div>
+    <nav>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="active">Dashboard</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="triggers.html">Triggers</a></li>
+        <li><a href="games.html">Games</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <meta property="og:title" content="crave-crusher-web" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Your Journey to Freedom</h2>
+        <p>Every minute without smoking is a victory. Track your progress, connect with others, and crush your cravings.</p>
+      </div>
+    </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <section class="dashboard">
+      <div class="stats-container">
+        <div class="stat-card">
+          <h3>Smoke-Free</h3>
+          <div class="stat-value" id="days-smoke-free">0</div>
+          <div class="stat-label">Days</div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Money Saved</h3>
+          <div class="stat-value" id="money-saved">$0</div>
+          <div class="stat-label">USD</div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Cigarettes Avoided</h3>
+          <div class="stat-value" id="cigarettes-avoided">0</div>
+          <div class="stat-label">Cigarettes</div>
+        </div>
+      </div>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+      <div class="health-progress">
+        <h3>Health Improvements</h3>
+        <div class="progress-container">
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>Blood Pressure Normalized</span>
+              <span id="blood-pressure-days">0 days</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="blood-pressure-bar"></div>
+            </div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>Carbon Monoxide Eliminated</span>
+              <span id="carbon-monoxide-days">0 days</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="carbon-monoxide-bar"></div>
+            </div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>Lung Function Improved</span>
+              <span id="lung-function-days">0 days</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="lung-function-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quit-date-container">
+        <h3>Set Your Quit Date</h3>
+        <div class="date-picker">
+          <input type="date" id="quit-date">
+          <button id="save-date">Save</button>
+        </div>
+        <div class="settings">
+          <label for="cigarettes-per-day">Cigarettes per day:</label>
+          <input type="number" id="cigarettes-per-day" min="1" value="10">
+          
+          <label for="price-per-pack">Price per pack ($):</label>
+          <input type="number" id="price-per-pack" min="0.01" step="0.01" value="8.00">
+          
+          <label for="cigarettes-per-pack">Cigarettes per pack:</label>
+          <input type="number" id="cigarettes-per-pack" min="1" value="20">
+          
+          <button id="save-settings">Save Settings</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="motivation">
+      <h3>Daily Motivation</h3>
+      <div class="quote-container">
+        <p id="quote">"The best time to quit smoking was the day you started, the second best time is today."</p>
+      </div>
+      <button id="new-quote">New Quote</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 CraveCrusher. All rights reserved.</p>
+      <p>Disclaimer: This website is for informational purposes only. Consult a healthcare professional for medical advice.</p>
+    </div>
+  </footer>
+
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/dashboard.js"></script>
+</body>
 </html>

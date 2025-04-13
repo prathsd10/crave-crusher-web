@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games - CraveCrusher</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/games.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Crave<span>Crusher</span></h1>
+    </div>
+    <nav>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="triggers.html">Triggers</a></li>
+        <li><a href="games.html" class="active">Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="games-hero">
+      <div class="hero-content">
+        <h2>Beat the Cravings with Games</h2>
+        <p>Distract yourself during cravings with these simple games. Just a few minutes can help a craving pass!</p>
+      </div>
+    </section>
+
+    <section class="games-container">
+      <div class="game-tab-container">
+        <div class="game-tabs">
+          <button class="game-tab active" data-game="memory">Memory Cards</button>
+          <button class="game-tab" data-game="bubbles">Bubble Pop</button>
+          <button class="game-tab" data-game="typing">Speed Typing</button>
+        </div>
+        
+        <div class="game-content-container">
+          <!-- Memory Game -->
+          <div id="memory-game" class="game-content active">
+            <div class="game-header">
+              <h3>Memory Cards</h3>
+              <p>Match all the pairs to win. Click on cards to flip them.</p>
+              <div class="game-stats">
+                <span>Moves: <span id="memory-moves">0</span></span>
+                <span>Pairs Found: <span id="memory-pairs">0</span>/8</span>
+              </div>
+              <button id="memory-reset" class="primary-btn">New Game</button>
+            </div>
+            
+            <div class="memory-board" id="memory-board">
+              <!-- Cards will be inserted here dynamically -->
+            </div>
+          </div>
+          
+          <!-- Bubble Pop Game -->
+          <div id="bubbles-game" class="game-content">
+            <div class="game-header">
+              <h3>Bubble Pop</h3>
+              <p>Pop as many bubbles as you can in 30 seconds.</p>
+              <div class="game-stats">
+                <span>Score: <span id="bubble-score">0</span></span>
+                <span>Time: <span id="bubble-time">30</span>s</span>
+              </div>
+              <button id="bubble-start" class="primary-btn">Start Game</button>
+            </div>
+            
+            <div class="bubble-board" id="bubble-board">
+              <!-- Bubbles will be inserted here dynamically -->
+            </div>
+          </div>
+          
+          <!-- Speed Typing Game -->
+          <div id="typing-game" class="game-content">
+            <div class="game-header">
+              <h3>Speed Typing</h3>
+              <p>Type the words as they appear. How many can you type in 60 seconds?</p>
+              <div class="game-stats">
+                <span>Score: <span id="typing-score">0</span></span>
+                <span>Time: <span id="typing-time">60</span>s</span>
+              </div>
+              <button id="typing-start" class="primary-btn">Start Game</button>
+            </div>
+            
+            <div class="typing-container">
+              <div class="word-display" id="word-display">
+                <span class="current-word">Press Start</span>
+              </div>
+              <input type="text" id="word-input" placeholder="Type here..." disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="distraction-tips">
+      <h3>Why Games Help With Cravings</h3>
+      <div class="tips-container">
+        <div class="tip-card">
+          <h4>Distraction Works</h4>
+          <p>Studies show that engaging your brain in an activity can help cravings pass. Most cravings last 3-5 minutes.</p>
+        </div>
+        
+        <div class="tip-card">
+          <h4>Dopamine Release</h4>
+          <p>Games provide a small dopamine hit that can help replace what your brain craves when wanting a cigarette.</p>
+        </div>
+        
+        <div class="tip-card">
+          <h4>Brain Retraining</h4>
+          <p>By consistently using alternative activities during cravings, you're teaching your brain new response patterns.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 CraveCrusher. All rights reserved.</p>
+      <p>Disclaimer: This website is for informational purposes only. Consult a healthcare professional for medical advice.</p>
+    </div>
+  </footer>
+
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/games.js"></script>
+</body>
+</html>

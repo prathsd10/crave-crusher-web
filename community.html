@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community - CraveCrusher</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/community.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Crave<span>Crusher</span></h1>
+    </div>
+    <nav>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="community.html" class="active">Community</a></li>
+        <li><a href="triggers.html">Triggers</a></li>
+        <li><a href="games.html">Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="community-hero">
+      <div class="hero-content">
+        <h2>Join Our Community</h2>
+        <p>Share your journey, read inspiring stories, and support others on their path to freedom from smoking.</p>
+      </div>
+    </section>
+
+    <section class="community-section">
+      <div class="stories-container">
+        <div class="section-header">
+          <h3>Success Stories</h3>
+          <button id="share-story-btn" class="primary-btn">Share Your Story</button>
+        </div>
+        
+        <div id="stories-list">
+          <!-- Stories will be dynamically inserted here -->
+        </div>
+      </div>
+
+      <div class="form-container" id="story-form">
+        <h3>Share Your Success Story</h3>
+        <form id="new-story-form">
+          <div class="form-group">
+            <label for="story-name">Your Name:</label>
+            <input type="text" id="story-name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="story-title">Title:</label>
+            <input type="text" id="story-title" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="story-content">Your Story:</label>
+            <textarea id="story-content" rows="5" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="smoke-free-days">Smoke-Free Days:</label>
+            <input type="number" id="smoke-free-days" min="0" required>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">Submit</button>
+            <button type="button" id="cancel-story" class="secondary-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="comments-section">
+      <h3>Community Discussion</h3>
+      <div class="comments-container">
+        <div id="comments-list">
+          <!-- Comments will be dynamically inserted here -->
+        </div>
+        
+        <div class="comment-form">
+          <h4>Leave a Comment</h4>
+          <form id="new-comment-form">
+            <div class="form-group">
+              <label for="comment-name">Your Name:</label>
+              <input type="text" id="comment-name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="comment-content">Your Comment:</label>
+              <textarea id="comment-content" rows="3" required></textarea>
+            </div>
+            
+            <button type="submit" class="primary-btn">Post Comment</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 CraveCrusher. All rights reserved.</p>
+      <p>Disclaimer: This website is for informational purposes only. Consult a healthcare professional for medical advice.</p>
+    </div>
+  </footer>
+
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/community.js"></script>
+</body>
+</html>

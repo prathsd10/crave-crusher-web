@@ -1,0 +1,265 @@
+
+/* Triggers Page Specific Styles */
+
+/* Hero Section */
+.triggers-hero {
+  background: linear-gradient(to right, #f47c48, var(--warning-color));
+  color: var(--white);
+  padding: 3rem 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Common Triggers Section */
+.common-triggers {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.triggers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.trigger-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.trigger-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow);
+}
+
+.trigger-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.trigger-card h4 {
+  margin-bottom: 0.75rem;
+  color: var(--secondary-dark);
+}
+
+.strategies {
+  margin-top: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.strategies h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.strategies ul {
+  padding-left: 1.25rem;
+}
+
+.strategies li {
+  margin-bottom: 0.5rem;
+}
+
+.strategies li:last-child {
+  margin-bottom: 0;
+}
+
+/* Personal Triggers Section */
+.personal-triggers {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.trigger-tracker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.trigger-form {
+  background-color: var(--background-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.range-value {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+}
+
+.triggers-log {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.trigger-log-item {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid;
+}
+
+.trigger-log-item h5 {
+  margin-bottom: 0.5rem;
+}
+
+.trigger-log-item p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.trigger-level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.trigger-level-bar {
+  height: 8px;
+  flex-grow: 1;
+  margin: 0 0.5rem;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.trigger-level-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.level-low {
+  border-left-color: var(--success-color);
+}
+
+.level-low .trigger-level-fill {
+  background-color: var(--success-color);
+  width: 30%;
+}
+
+.level-medium {
+  border-left-color: var(--warning-color);
+}
+
+.level-medium .trigger-level-fill {
+  background-color: var(--warning-color);
+  width: 60%;
+}
+
+.level-high {
+  border-left-color: var(--error-color);
+}
+
+.level-high .trigger-level-fill {
+  background-color: var(--error-color);
+  width: 90%;
+}
+
+/* Emergency Kit Section */
+.emergency-kit {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+}
+
+.emergency-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.emergency-item {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.breathing-animation {
+  width: 200px;
+  height: 200px;
+  margin: 1.5rem auto;
+  position: relative;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s ease-in-out;
+}
+
+.instruction {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.timer {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-dark);
+}
+
+.circle.inhale {
+  transform: scale(1.2);
+  background-color: var(--secondary-light);
+}
+
+.circle.hold {
+  background-color: var(--warning-color);
+}
+
+.circle.exhale {
+  transform: scale(0.9);
+  background-color: var(--primary-light);
+}
+
+.distraction-list {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.distraction-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .trigger-tracker, .emergency-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .triggers-grid {
+    grid-template-columns: 1fr;
+  }
+}

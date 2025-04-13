@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triggers - CraveCrusher</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/triggers.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Crave<span>Crusher</span></h1>
+    </div>
+    <nav>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="triggers.html" class="active">Triggers</a></li>
+        <li><a href="games.html">Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="triggers-hero">
+      <div class="hero-content">
+        <h2>Identify & Overcome Triggers</h2>
+        <p>Understanding what triggers your smoking urges is the first step to overcoming them.</p>
+      </div>
+    </section>
+
+    <section class="triggers-section">
+      <div class="common-triggers">
+        <h3>Common Smoking Triggers</h3>
+        <div class="triggers-grid">
+          <div class="trigger-card">
+            <div class="trigger-icon">☕</div>
+            <h4>Coffee or Alcohol</h4>
+            <p>These beverages often go hand-in-hand with smoking habits.</p>
+            <div class="strategies">
+              <h5>Strategies:</h5>
+              <ul>
+                <li>Change your routine or location</li>
+                <li>Hold something else in your hand</li>
+                <li>Try a different beverage</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="trigger-card">
+            <div class="trigger-icon">😫</div>
+            <h4>Stress</h4>
+            <p>Many people smoke as a way to cope with stress.</p>
+            <div class="strategies">
+              <h5>Strategies:</h5>
+              <ul>
+                <li>Practice deep breathing</li>
+                <li>Try progressive muscle relaxation</li>
+                <li>Take a short walk</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="trigger-card">
+            <div class="trigger-icon">👥</div>
+            <h4>Social Situations</h4>
+            <p>Being around others who smoke can trigger cravings.</p>
+            <div class="strategies">
+              <h5>Strategies:</h5>
+              <ul>
+                <li>Let friends know you've quit</li>
+                <li>Have a go-to excuse ready</li>
+                <li>Step away briefly if needed</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="trigger-card">
+            <div class="trigger-icon">😋</div>
+            <h4>After Meals</h4>
+            <p>For many, smoking after eating is a strong habit.</p>
+            <div class="strategies">
+              <h5>Strategies:</h5>
+              <ul>
+                <li>Brush teeth immediately after eating</li>
+                <li>Take a walk after meals</li>
+                <li>Chew sugar-free gum</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="trigger-card">
+            <div class="trigger-icon">😞</div>
+            <h4>Negative Emotions</h4>
+            <p>Sadness, loneliness, or boredom can trigger smoking.</p>
+            <div class="strategies">
+              <h5>Strategies:</h5>
+              <ul>
+                <li>Call a supportive friend</li>
+                <li>Practice mindfulness</li>
+                <li>Find a healthy distraction</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="trigger-card">
+            <div class="trigger-icon">🚗</div>
+            <h4>Driving</h4>
+            <p>Many associate driving with smoking.</p>
+            <div class="strategies">
+              <h5>Strategies:</h5>
+              <ul>
+                <li>Clean your car thoroughly</li>
+                <li>Keep healthy snacks handy</li>
+                <li>Listen to engaging podcasts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="personal-triggers">
+      <h3>Track Your Personal Triggers</h3>
+      <div class="trigger-tracker">
+        <div class="trigger-form">
+          <h4>Log a New Trigger</h4>
+          <form id="new-trigger-form">
+            <div class="form-group">
+              <label for="trigger-situation">Situation or Activity:</label>
+              <input type="text" id="trigger-situation" placeholder="e.g., Morning coffee" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="trigger-emotions">Emotions Felt:</label>
+              <input type="text" id="trigger-emotions" placeholder="e.g., Stressed, anxious" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="trigger-intensity">Craving Intensity (1-10):</label>
+              <input type="range" id="trigger-intensity" min="1" max="10" value="5">
+              <div class="range-value"><span id="intensity-value">5</span>/10</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="coping-strategy">Coping Strategy Used:</label>
+              <textarea id="coping-strategy" rows="2" placeholder="What did you do instead of smoking?" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="strategy-effectiveness">How Effective Was It? (1-10):</label>
+              <input type="range" id="strategy-effectiveness" min="1" max="10" value="5">
+              <div class="range-value"><span id="effectiveness-value">5</span>/10</div>
+            </div>
+            
+            <button type="submit" class="primary-btn">Save Trigger</button>
+          </form>
+        </div>
+        
+        <div class="triggers-log">
+          <h4>Your Trigger Log</h4>
+          <div id="triggers-list">
+            <!-- Triggers will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="emergency-kit">
+      <h3>Craving Emergency Kit</h3>
+      <div class="emergency-container">
+        <div class="emergency-item">
+          <h4>4-7-8 Breathing Technique</h4>
+          <div class="breathing-animation" id="breathing-animation">
+            <div class="circle">
+              <div class="instruction" id="breathing-instruction">Inhale</div>
+              <div class="timer" id="breathing-timer">4</div>
+            </div>
+          </div>
+          <button id="start-breathing" class="primary-btn">Start Exercise</button>
+        </div>
+        
+        <div class="emergency-item">
+          <h4>Immediate Distractions</h4>
+          <ul class="distraction-list">
+            <li>Drink a glass of water slowly</li>
+            <li>Text a supportive friend</li>
+            <li>Do 10 jumping jacks</li>
+            <li>Squeeze a stress ball</li>
+            <li>Brush your teeth</li>
+            <li><a href="games.html">Play a quick game</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 CraveCrusher. All rights reserved.</p>
+      <p>Disclaimer: This website is for informational purposes only. Consult a healthcare professional for medical advice.</p>
+    </div>
+  </footer>
+
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/triggers.js"></script>
+</body>
+</html>
