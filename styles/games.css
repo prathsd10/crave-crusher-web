@@ -29,6 +29,7 @@
   display: flex;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .game-tab {
@@ -190,6 +191,147 @@
   padding: 1rem;
 }
 
+/* Breathing Exercise */
+.breathing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.breathing-circle-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.breathing-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 4s ease-in-out, box-shadow 4s ease-in-out;
+}
+
+.breathing-circle.inhale {
+  transform: scale(1.5);
+  box-shadow: 0 0 25px var(--primary-color);
+}
+
+.breathing-circle.hold {
+  transform: scale(1.5);
+  box-shadow: 0 0 25px var(--secondary-color);
+}
+
+.breathing-circle.exhale {
+  transform: scale(1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.breathing-instruction {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.breathing-timer {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Distraction Tasks */
+.tasks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 0 auto;
+}
+
+.task-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-top: 4px solid var(--secondary-color);
+}
+
+.task-card h4 {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.task-card p {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.task-btn {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color var(--transition-speed);
+}
+
+.task-btn:hover {
+  background-color: var(--primary-color);
+}
+
+.task-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.task-modal-content {
+  background-color: var(--white);
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  width: 80%;
+  max-width: 600px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.close-modal {
+  color: var(--text-light);
+  float: right;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#task-interaction {
+  margin: 1.5rem 0;
+  min-height: 100px;
+}
+
 /* Distraction Tips Section */
 .distraction-tips {
   background-color: var(--white);
@@ -244,6 +386,16 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+  
+  .breathing-circle-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .breathing-circle {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -252,6 +404,16 @@
   }
   
   .memory-card {
+    height: 100px;
+  }
+  
+  .breathing-circle-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .breathing-circle {
+    width: 100px;
     height: 100px;
   }
 }
