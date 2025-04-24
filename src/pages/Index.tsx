@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { PlusCircle, MinusCircle, Cigarette, Settings, TrendingUp, Calendar } from "lucide-react";
+import { Cigarette, DollarSign, Plus, Minus, Settings, TrendingUp, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface SmokingStats {
@@ -14,6 +13,7 @@ interface SmokingStats {
 
 const Index = () => {
   const [cigarettesToday, setCigarettesToday] = useState(0);
+  const [dailyCost, setDailyCost] = useState(0);
   const [quitDate, setQuitDate] = useState<string>("");
   const [showSettings, setShowSettings] = useState(false);
   const [stats, setStats] = useState<SmokingStats>({
@@ -38,7 +38,18 @@ const Index = () => {
     if (savedCigarettesToday) setCigarettesToday(parseInt(savedCigarettesToday));
     
     calculateHealthProgress();
+    updateDailyCost();
   }, [quitDate]);
+
+  const updateDailyCost = () => {
+    const costPerCigarette = stats.pricePerPack / stats.cigarettesPerPack;
+    setDailyCost(cigarettesToday * costPerCigarette);
+  };
+
+  useEffect(() => {
+    updateDailyCost();
+    localStorage.setItem('cigarettesToday', cigarettesToday.toString());
+  }, [cigarettesToday, stats.pricePerPack, stats.cigarettesPerPack]);
 
   const calculateHealthProgress = () => {
     if (!quitDate) return;
@@ -68,18 +79,15 @@ const Index = () => {
   const handleAddCigarette = () => {
     const newCount = cigarettesToday + 1;
     setCigarettesToday(newCount);
-    localStorage.setItem('cigarettesToday', newCount.toString());
     toast({
       title: "Cigarette logged",
-      description: "Stay strong! Every step counts towards your goal.",
+      description: `Today's count: ${newCount}. Stay strong!`,
     });
   };
 
   const handleRemoveCigarette = () => {
     if (cigarettesToday > 0) {
-      const newCount = cigarettesToday - 1;
-      setCigarettesToday(newCount);
-      localStorage.setItem('cigarettesToday', newCount.toString());
+      setCigarettesToday(cigarettesToday - 1);
     }
   };
 
@@ -117,11 +125,14 @@ const Index = () => {
         
         <div className="p-6 bg-white rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-2 flex items-center gap-2">
-            <TrendingUp className="h-5 w-5" />
+            <DollarSign className="h-5 w-5" />
             Money Saved
           </h2>
-          <p className="text-3xl font-bold text-blue-600">
+          <p className="text-3xl font-bold text-green-600">
             ${calculateMoneySaved()}
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Today's spending: ${dailyCost.toFixed(2)}
           </p>
         </div>
         
@@ -138,23 +149,33 @@ const Index = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="p-6 bg-white rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4 flex items-center justify-between">
-            <span>Today's Cigarettes</span>
+          <h2 className="text-xl font-semibold mb-4">Today's Cigarettes</h2>
+          <div className="flex items-center justify-center gap-4">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handleRemoveCigarette}
+              disabled={cigarettesToday === 0}
+              className="hover:bg-red-50"
+            >
+              <Minus className="h-5 w-5" />
+            </Button>
             <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={handleRemoveCigarette}
-                disabled={cigarettesToday === 0}
-              >
-                <MinusCircle className="h-4 w-4" />
-              </Button>
-              <span className="text-2xl font-bold">{cigarettesToday}</span>
-              <Button variant="outline" size="icon" onClick={handleAddCigarette}>
-                <PlusCircle className="h-4 w-4" />
-              </Button>
+              <Cigarette className="h-6 w-6 text-gray-600" />
+              <span className="text-3xl font-bold">{cigarettesToday}</span>
             </div>
-          </h2>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handleAddCigarette}
+              className="hover:bg-red-50"
+            >
+              <Plus className="h-5 w-5" />
+            </Button>
+          </div>
+          <p className="text-center text-sm text-gray-500 mt-4">
+            Track your daily cigarette consumption
+          </p>
         </div>
 
         <div className="p-6 bg-white rounded-lg shadow-md">
